@@ -20,7 +20,7 @@ pipeline {
                 ws('/var/lib/jenkins/projects-hello/demo_fastapi') {
                     sh '''
                         echo "Building Docker image..."
-                        docker build -t demo-fastapi:latest .
+                        sudo docker build -t demo-fastapi:latest .
                     '''
                 }
             }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 sh '''
                     echo "Available Docker Images:"
-                    docker images
+                    sudo docker images
                 '''
             }
         }
